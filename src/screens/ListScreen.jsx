@@ -21,20 +21,24 @@ const ListScreen = () => {
   ];
 
   return (
-    <FlatList
-      horizontal={false}
-      showsHorizontalScrollIndicator={false}
-      keyExtractor={(friend) => friend.name}
-      data={friends}
-      renderItem={(anything) => {
-        //anything  === { item: { name: 'Friend #1' }, index: 0 }
-        return (
-          <Text style={styles.firstTextStyle}>
-            {anything.item.name} - Age {anything.item.age}
-          </Text>
-        );
-      }}
-    />
+    <>
+      {' '}
+      <Text>List Screen</Text>
+      <FlatList
+        horizontal={false}
+        showsHorizontalScrollIndicator={false}
+        keyExtractor={(friend) => friend.name}
+        data={friends}
+        renderItem={(anything) => {
+          //anything  === { item: { name: 'Friend #1' }, index: 0 }
+          return (
+            <Text style={styles.firstTextStyle}>
+              {anything.item.name} - Age {anything.item.age}
+            </Text>
+          );
+        }}
+      />
+    </>
   );
 };
 

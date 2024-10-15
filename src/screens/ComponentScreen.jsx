@@ -24,7 +24,7 @@ const ComponentsScreen = () => {
 
   return (
     <View>
-      <Text style={styles.textStyle}>First android text</Text>
+      <Text style={styles.textStyle}>Component Screen</Text>
       <Text>Hello there!</Text>
       <Text style={{ fontSize: 40 }}>
         {greeting} {name}{' '}
