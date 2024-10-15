@@ -1,5 +1,11 @@
 import React from 'react';
-import { Text, StyleSheet, View, FlatList } from 'react-native';
+import {
+  Text,
+  StyleSheet,
+  View,
+  FlatList,
+  TurboModuleRegistry,
+} from 'react-native';
 
 const ListScreen = () => {
   const friends = [
@@ -16,12 +22,14 @@ const ListScreen = () => {
 
   return (
     <FlatList
+      horizontal={false}
+      showsHorizontalScrollIndicator={false}
       keyExtractor={(friend) => friend.name}
       data={friends}
       renderItem={(anything) => {
         //anything  === { item: { name: 'Friend #1' }, index: 0 }
         return (
-          <Text style={styles.textStyle}>
+          <Text style={styles.firstTextStyle}>
             {anything.item.name} - Age {anything.item.age}
           </Text>
         );
@@ -30,6 +38,11 @@ const ListScreen = () => {
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  firstTextStyle: {
+    marginVertical: 10,
+    marginHorizontal: 10,
+  },
+});
 
 export default ListScreen;
