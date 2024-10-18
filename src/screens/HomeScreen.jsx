@@ -1,15 +1,15 @@
 import React from 'react';
 import { Text, StyleSheet, View, Button, TouchableOpacity } from 'react-native';
 
-const HomeScreen = (props) => {
-  // console.log(props.navigation);
+const HomeScreen = ({ navigation }) => {
+  // console.log(props);
 
   const clickHandler = (e) => {
     if (e.target.textContent === 'Go to components demo') {
       console.log('Component clicked');
-      props.navigation.navigate('Components');
+      navigation.navigate('Components');
     } else {
-      props.navigation.navigate('List');
+      navigation.navigate('List');
       console.log('List clicked');
       console.log(e.target);
     }
@@ -23,7 +23,6 @@ const HomeScreen = (props) => {
       <p></p>
       <Button onPress={clickHandler} title='Go to list element' />
       <TouchableOpacity onPress={clickHandler}>
-        <Text>Go to List Demo</Text>
         <Text>Go to List Demo</Text>
       </TouchableOpacity>
     </View>
