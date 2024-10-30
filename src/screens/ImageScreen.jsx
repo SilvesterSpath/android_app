@@ -6,9 +6,9 @@ const ImageScreen = () => {
   return (
     <div>
       ImageScreen
-      <ImageDetail title='Forest' />
+      <ImageDetail title='Beach' />
       <ImageDetail title='Mountains' />
-      <ImageDetail title='See' />
+      <ImageDetail title='Forest' />
     </div>
   );
 };
