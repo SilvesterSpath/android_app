@@ -8,15 +8,16 @@ import {
   Image,
 } from 'react-native';
 
-const ImageDetail = ({ title, imageSource }) => {
+const ImageDetail = ({ title, imageSource, imageScore }) => {
   return (
     <View>
-      <Text style={styles.text}>ImageDetail: {title}</Text>
       <Image
         source={imageSource}
         // Add width and height - this is required for React Native images
         style={styles.image}
       />
+      <Text style={styles.text}>{title}</Text>
+      <Text style={styles.text}>Image Score - {imageScore}</Text>
     </View>
   );
 };

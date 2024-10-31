@@ -5,18 +5,20 @@ import ImageDetail from '../components/ImageDetail';
 const ImageScreen = () => {
   return (
     <div>
-      ImageScreen
       <ImageDetail
         title='Beach'
         imageSource={require('../../assets/beach.jpg')}
+        imageScore={9}
       />
       <ImageDetail
         title='Mountains'
         imageSource={require('../../assets/mountain.jpg')}
+        imageScore={7}
       />
       <ImageDetail
         title='Forest'
         imageSource={require('../../assets/forest.jpg')}
+        imageScore={4}
       />
     </div>
   );
