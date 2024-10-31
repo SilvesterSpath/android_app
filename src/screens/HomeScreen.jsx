@@ -6,14 +6,13 @@ const HomeScreen = ({ navigation }) => {
 
   const clickHandler = (e) => {
     if (e.target.textContent === 'Go to components demo') {
-      console.log('Component clicked');
       navigation.navigate('Components');
     } else if (e.target.textContent === 'Go to image element') {
       navigation.navigate('Image');
-    } else {
+    } else if (e.target.textContent === 'Go to list element') {
       navigation.navigate('List');
-      console.log('List clicked');
-      console.log(e.target);
+    } else if (e.target.textContent === 'Go to counter element') {
+      navigation.navigate('Counter');
     }
   };
 
@@ -26,6 +25,8 @@ const HomeScreen = ({ navigation }) => {
       <Button onPress={clickHandler} title='Go to list element' />
       <p></p>
       <Button onPress={clickHandler} title='Go to image element' />
+      <p></p>
+      <Button onPress={clickHandler} title='Go to counter element' />
       {/*<TouchableOpacity onPress={clickHandler}>
         <Text>Go to List Demo</Text>
       </TouchableOpacity> */}
