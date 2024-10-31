@@ -10,10 +10,17 @@ const CounterScreen = () => {
     setCounter(newCounter);
   };
 
+  const decrement = () => {
+    // setCounter(counter - 1);
+    const newCounter = counter - 1;
+    setCounter(newCounter);
+  };
+
   return (
     <View>
       <Text>Current Count: {counter}</Text>
       <Button onPress={increment} title='Increment' />
+      <Button onPress={decrement} title='Decrement' />
     </View>
   );
 };
