@@ -13,6 +13,8 @@ const HomeScreen = ({ navigation }) => {
       navigation.navigate('List');
     } else if (e.target.textContent === 'Go to counter element') {
       navigation.navigate('Counter');
+    } else if (e.target.textContent === 'Go to color element') {
+      navigation.navigate('Color');
     }
   };
 
@@ -27,6 +29,9 @@ const HomeScreen = ({ navigation }) => {
       <Button onPress={clickHandler} title='Go to image element' />
       <p></p>
       <Button onPress={clickHandler} title='Go to counter element' />
+
+      <p></p>
+      <Button onPress={clickHandler} title='Go to color element' />
       {/*<TouchableOpacity onPress={clickHandler}>
         <Text>Go to List Demo</Text>
       </TouchableOpacity> */}
