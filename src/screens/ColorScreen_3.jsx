@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Button, FlatList } from 'react-native';
+import ColorCounter from '../components/ColorCounter';
 
 const ColorScreen_3 = () => {
   const [colors, setColors] = useState([]);
@@ -16,6 +17,31 @@ const ColorScreen_3 = () => {
     return color;
   };
 
+  console.log(red);
+  console.log(green);
+  console.log(blue);
+
+  const incrementRed = () => {
+    red < 255 && setRed(red + 1);
+  };
+  const decrementRed = () => {
+    red > 0 && setRed(red - 1);
+  };
+
+  const incrementGreen = () => {
+    green < 255 && setGreen(green + 1);
+  };
+  const decrementGreen = () => {
+    green > 0 && setGreen(green - 1);
+  };
+
+  const incrementBlue = () => {
+    blue < 255 && setBlue(blue + 1);
+  };
+  const decrementBlue = () => {
+    blue > 0 && setBlue(blue - 1);
+  };
+
   return (
     <View>
       <Button
@@ -24,10 +50,31 @@ const ColorScreen_3 = () => {
           setColors([...colors, randomRgb()]);
         }}
       />
-      <Button title='More  Red' onPress={() => setRed(red + 1)} />
-      <Button title='More  Green' onPress={() => setGreen(green + 1)} />
-      <Button title='More  Blue' onPress={() => setBlue(blue + 1)} />
-      <View style={{ height: 100, width: 100, backgroundColor: randomRgb() }} />
+      <ColorCounter
+        color='Red'
+        value={red}
+        increment={incrementRed}
+        decrement={decrementRed}
+      />
+      <ColorCounter
+        color='Green'
+        value={green}
+        increment={incrementGreen}
+        decrement={decrementGreen}
+      />
+      <ColorCounter
+        color='Blue'
+        value={blue}
+        increment={incrementBlue}
+        decrement={decrementBlue}
+      />
+      <View
+        style={{
+          height: 100,
+          width: 100,
+          backgroundColor: `rgb(${red}, ${green}, ${blue})`,
+        }}
+      />
       <FlatList
         keyExtractor={(item) => item}
         data={colors}
