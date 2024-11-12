@@ -11,46 +11,36 @@ const ColorScreen_3 = () => {
 
   console.log(red, green, blue);
 
-  const incrementRed = () => {
-    red < 255 && setRed(red + COLOR_INCREMENT);
-  };
-  const decrementRed = () => {
-    red > 0 && setRed(red - COLOR_INCREMENT);
-  };
-
-  const incrementGreen = () => {
-    green < 255 && setGreen(green + COLOR_INCREMENT);
-  };
-  const decrementGreen = () => {
-    green > 0 && setGreen(green - COLOR_INCREMENT);
-  };
-
-  const incrementBlue = () => {
-    blue < 255 && setBlue(blue + COLOR_INCREMENT);
-  };
-  const decrementBlue = () => {
-    blue > 0 && setBlue(blue - COLOR_INCREMENT);
+  const setColor = (color, change) => {
+    // color === 'red', 'green', 'blue'
+    // change === +15, -15
+    if (color === 'red') {
+      red + change > 255 || red + change < 0 ? null : setRed(red + change);
+    } else if (color === 'green') {
+      green + change > 255 || green + change < 0
+        ? null
+        : setGreen(green + change);
+    } else {
+      blue + change > 255 || blue + change < 0 ? null : setBlue(blue + change);
+    }
   };
 
   return (
     <View>
       <ColorCounter
         color='Red'
-        value={red}
-        increment={incrementRed}
-        decrement={decrementRed}
+        increment={() => setColor('red', COLOR_INCREMENT)}
+        decrement={() => setColor('red', -1 * COLOR_INCREMENT)}
       />
       <ColorCounter
         color='Green'
-        value={green}
-        increment={incrementGreen}
-        decrement={decrementGreen}
+        increment={() => setColor('green', COLOR_INCREMENT)}
+        decrement={() => setColor('green', -1 * COLOR_INCREMENT)}
       />
       <ColorCounter
         color='Blue'
-        value={blue}
-        increment={incrementBlue}
-        decrement={decrementBlue}
+        increment={() => setColor('blue', COLOR_INCREMENT)}
+        decrement={() => setColor('blue', -1 * COLOR_INCREMENT)}
       />
       <p></p>
       <View
