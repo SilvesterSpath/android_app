@@ -12,16 +12,22 @@ const ColorScreen_3 = () => {
   console.log(red, green, blue);
 
   const setColor = (color, change) => {
-    // color === 'red', 'green', 'blue'
-    // change === +15, -15
-    if (color === 'red') {
-      red + change > 255 || red + change < 0 ? null : setRed(red + change);
-    } else if (color === 'green') {
-      green + change > 255 || green + change < 0
-        ? null
-        : setGreen(green + change);
-    } else {
-      blue + change > 255 || blue + change < 0 ? null : setBlue(blue + change);
+    switch (color) {
+      case 'red':
+        red + change > 255 || red + change < 0 ? null : setRed(red + change);
+        break;
+      case 'green':
+        green + change > 255 || green + change < 0
+          ? null
+          : setGreen(green + change);
+        break;
+      case 'blue':
+        blue + change > 255 || blue + change < 0
+          ? null
+          : setBlue(blue + change);
+        break;
+      default:
+        break;
     }
   };
 
