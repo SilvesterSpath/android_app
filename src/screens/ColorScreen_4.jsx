@@ -8,18 +8,18 @@ const reducer = (state, action) => {
   // state === { red: number, green: number, blue: number }
   // action === { type: 'change_red' || 'change_green' || 'change_blue', payload: 15 || -15 }
   switch (action.type) {
-    case 'red':
+    case 'change_red':
       // never do this
       // state.red = state.red + action.payload;
       return state.red + action.payload > 255 || state.red + action.payload < 0
         ? state
         : { ...state, red: state.red + action.payload };
-    case 'green':
+    case 'change_green':
       return state.green + action.payload > 255 ||
         state.green + action.payload < 0
         ? state
         : { ...state, green: state.green + action.payload };
-    case 'blue':
+    case 'change_blue':
       return state.blue + action.payload > 255 ||
         state.blue + action.payload < 0
         ? state
@@ -38,24 +38,30 @@ const ColorScreen_4 = () => {
     <View>
       <ColorCounter
         color='Red'
-        increment={() => dispatch({ type: 'red', payload: COLOR_INCREMENT })}
+        increment={() =>
+          dispatch({ type: 'change_red', payload: COLOR_INCREMENT })
+        }
         decrement={() => {
-          dispatch({ type: 'red', payload: -1 * COLOR_INCREMENT });
+          dispatch({ type: 'change_red', payload: -1 * COLOR_INCREMENT });
         }}
       />
       <ColorCounter
         color='Green'
-        increment={() => dispatch({ type: 'green', payload: COLOR_INCREMENT })}
+        increment={() =>
+          dispatch({ type: 'change_green', payload: COLOR_INCREMENT })
+        }
         decrement={() => {
-          dispatch({ type: 'green', payload: -1 * COLOR_INCREMENT });
+          dispatch({ type: 'change_green', payload: -1 * COLOR_INCREMENT });
         }}
       />
 
       <ColorCounter
         color='Blue'
-        increment={() => dispatch({ type: 'blue', payload: COLOR_INCREMENT })}
+        increment={() =>
+          dispatch({ type: 'change_blue', payload: COLOR_INCREMENT })
+        }
         decrement={() => {
-          dispatch({ type: 'blue', payload: -1 * COLOR_INCREMENT });
+          dispatch({ type: 'change_blue', payload: -1 * COLOR_INCREMENT });
         }}
       />
 
