@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, StyleSheet, View, Button, TextInput } from 'react-native';
 
 const TextScreen = () => {
+  const [currentText, setCurrentText] = useState('asdfsdfdsf');
+
+  const handleChange = (e) => {
+    setCurrentText(e);
+    console.log(e);
+  };
+
   return (
     <View>
       <TextInput
+        value={currentText}
         style={styles.input}
         autoCapitalize='none'
         autoCorrect={false}
+        onChangeText={handleChange}
       />
     </View>
   );
