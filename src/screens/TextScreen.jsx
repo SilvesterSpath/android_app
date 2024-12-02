@@ -2,22 +2,18 @@ import React, { useState } from 'react';
 import { Text, StyleSheet, View, Button, TextInput } from 'react-native';
 
 const TextScreen = () => {
-  const [currentText, setCurrentText] = useState('asdfsdfdsf');
-
-  const handleChange = (e) => {
-    setCurrentText(e);
-    console.log(e);
-  };
+  const [name, setName] = useState('');
 
   return (
     <View>
       <TextInput
-        value={currentText}
+        value={name}
         style={styles.input}
         autoCapitalize='none'
         autoCorrect={false}
-        onChangeText={handleChange}
+        onChangeText={(newValue) => setName(newValue)}
       />
+      <Text>My name is: {name}</Text>
     </View>
   );
 };
