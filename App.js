@@ -11,6 +11,7 @@ import ColorScreen_3 from './src/screens/ColorScreen_3';
 import ColorScreen_4 from './src/screens/ColorScreen_4';
 import CounterScreen_2 from './src/screens/CounterScreen_2';
 import TextScreen from './src/screens/TextScreen';
+import PasswordScreen from './src/screens/PasswordScreen';
 
 const navigator = createStackNavigator(
   {
@@ -25,6 +26,7 @@ const navigator = createStackNavigator(
     Color_4: ColorScreen_4,
     Counter_2: CounterScreen_2,
     Text: TextScreen,
+    Password: PasswordScreen,
   },
   {
     initialRouteName: 'Home',
