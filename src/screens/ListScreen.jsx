@@ -22,7 +22,6 @@ const ListScreen = () => {
 
   return (
     <>
-      {' '}
       <Text>List Screen</Text>
       <FlatList
         horizontal={false}
