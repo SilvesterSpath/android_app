@@ -48,7 +48,7 @@ const ColorScreen_3 = () => {
         increment={() => setColor('blue', COLOR_INCREMENT)}
         decrement={() => setColor('blue', -1 * COLOR_INCREMENT)}
       />
-      <p></p>
+      <Text></Text>
       <View
         style={{
           height: 150,

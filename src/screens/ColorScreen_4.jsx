@@ -65,7 +65,7 @@ const ColorScreen_4 = () => {
         }}
       />
 
-      <p></p>
+      <Text></Text>
       <View
         style={{
           height: 150,

@@ -4,7 +4,7 @@ import ImageDetail from '../components/ImageDetail';
 
 const ImageScreen = () => {
   return (
-    <div>
+    <>
       <ImageDetail
         title='Beach'
         imageSource={require('../../assets/beach.jpg')}
@@ -20,7 +20,7 @@ const ImageScreen = () => {
         imageSource={require('../../assets/forest.jpg')}
         imageScore={4}
       />
-    </div>
+    </>
   );
 };
 
